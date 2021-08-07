@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import DepartmentService from "../Services/DepartmentService"
-import { Table, Checkbox, Dropdown} from 'semantic-ui-react'
+import {Checkbox, Dropdown} from 'semantic-ui-react'
 
 export default function Department() {
 
