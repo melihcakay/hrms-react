@@ -5,18 +5,20 @@ import Navbar from './Layouts/Navbar';
 import MainHeader from './Layouts/MainHeader';
 import Main from './Layouts/Main';
 import Footer from './Layouts/Footer';
+import Banner from './Layouts/Banner';
 
 function App() {
   return (
     <div className="App">
+      <Navbar/>
       <Container>
-     <Navbar/>
      <MainHeader/>
      <br/>
      <Main/>
-     <Footer/>
+     <br/>  
+     <Banner/>
      </Container>
-     
+     <Footer/>
     </div>
   );
 }
