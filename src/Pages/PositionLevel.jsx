@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import PositionLevelService from '../Services/PositionLevelService'
-import { Table, Checkbox} from 'semantic-ui-react'
+import { Dropdown, Checkbox} from 'semantic-ui-react'
 
 export default function PositionLevel() {
 
@@ -17,14 +17,16 @@ export default function PositionLevel() {
 
     return (
         <div>
-            <Table>
+            <Dropdown text='Pozisyon Seviyesi'>
+                <Dropdown.Menu>
                 {positionLevels.map((positionLevel) => (
-                <Table.Row key={positionLevel.id}>
+                <Dropdown.Item key={positionLevel.id}>
                     
-                    <Table.Cell><Checkbox label = {positionLevel.positionLevel}/></Table.Cell>
-                </Table.Row>
+                    <Checkbox label = {positionLevel.positionLevel}/>
+                </Dropdown.Item>
                 ))}
-            </Table>
+                </Dropdown.Menu>
+                </Dropdown>
         </div>
     )
 }

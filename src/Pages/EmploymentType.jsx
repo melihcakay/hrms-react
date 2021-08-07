@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import EmploymentTypeService from '../Services/EmploymentTypeService'
-import { Table, Checkbox} from 'semantic-ui-react'
+import { Dropdown, Checkbox} from 'semantic-ui-react'
 
 export default function EmploymentType() {
 
@@ -18,14 +18,16 @@ export default function EmploymentType() {
 
     return (
         <div>
-            <Table>
+            <Dropdown text='Çalışma Şekli'>
+                <Dropdown.Menu>
                 {employmentTypes.map((employmentType) => (
-                <Table.Row key={employmentType.id}>
+                <Dropdown.Item key={employmentType.id}>
                     
-                    <Table.Cell><Checkbox label = {employmentType.employmentType}/></Table.Cell>
-                </Table.Row>
+                    <Checkbox label = {employmentType.employmentType}/>
+                </Dropdown.Item>
                 ))}
-            </Table>
+                </Dropdown.Menu>
+                </Dropdown>
         </div>
     )
 }

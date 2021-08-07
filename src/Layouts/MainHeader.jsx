@@ -5,12 +5,15 @@ export default function MainHeader() {
     return (
         <div>
             <Segment placeholder>
-                <Header icon size="large">
-                <Icon name='address card' />
-                Online olarak oluşturduğunuz özgeçmiş ile sitemizdeki iş ilanlarına başvuru yapın. 
-                </Header>
-                <Button primary>Özgeçmiş Oluştur</Button>
-            </Segment>
+            
+            <Header icon size="large">
+            <Icon name='address book' />
+            Kolayca ücretsiz ilan ver, hızla gelecek
+            başvurulardan yeni elemanını seç! 
+            </Header>
+            <Button primary>İş İlanı Oluştur</Button>
+
+        </Segment>
         </div>
     )
 }

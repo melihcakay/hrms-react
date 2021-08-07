@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Table, Checkbox} from 'semantic-ui-react'
+import {Checkbox, Dropdown} from 'semantic-ui-react'
 import CompanySectorService from '../Services/CompanySectorService'
 
 export default function CompanySector() {
@@ -17,14 +17,16 @@ export default function CompanySector() {
     return (
         <div>
             
-            <Table>
+            <Dropdown text='Şirketin Sektörü'>
+                <Dropdown.Menu>
                 {companySectors.map((companySector) => (
-                <Table.Row key={companySectors.id}>
-                    
-                    <Table.Cell><Checkbox label = {companySector.companySectorName}/></Table.Cell>
-                </Table.Row>
+             
+                    <Dropdown.Item key={companySector.id}>
+                   <Checkbox label = {companySector.companySectorName}/>
+                   </Dropdown.Item>
                 ))}
-            </Table>
+                </Dropdown.Menu>
+            </Dropdown>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import CitiesService from "../Services/CitiesService"
-import { Table, Checkbox} from 'semantic-ui-react'
+import {Dropdown, Checkbox} from 'semantic-ui-react'
 
 export default function City() {
 
@@ -20,15 +20,16 @@ export default function City() {
 
     return (
         <div>
-            <Table>
+            
+            <Dropdown text='Şehirler'>
+            
+                <Dropdown.Menu>
+                
                 {cities.map((city) => (
-                <Table.Row key={city.id}>
-                    
-                    <Table.Cell><Checkbox label = {city.cityName}/></Table.Cell>
-                </Table.Row>
-                ))}
-            </Table>
-        
+                    <Dropdown.Item key={city.id} ><Checkbox label = {city.cityName}/></Dropdown.Item>
+                    ))}
+              </Dropdown.Menu>
+              </Dropdown>
         </div>
     )   
 }

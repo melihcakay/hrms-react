@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import DepartmentService from "../Services/DepartmentService"
-import { Table, Checkbox} from 'semantic-ui-react'
+import { Table, Checkbox, Dropdown} from 'semantic-ui-react'
 
 export default function Department() {
 
@@ -18,14 +18,16 @@ export default function Department() {
 
     return (
         <div>
-            <Table>
+                <Dropdown text='Departman'>
+                <Dropdown.Menu>
                 {departments.map((department) => (
-                <Table.Row key={department.id}>
+                <Dropdown.Item key={department.id}>
                     
-                    <Table.Cell><Checkbox label = {department.department}/></Table.Cell>
-                </Table.Row>
+                    <Checkbox label = {department.department}/>
+                </Dropdown.Item>
                 ))}
-            </Table>
+                </Dropdown.Menu>
+                </Dropdown>
         </div>
     )
 }
