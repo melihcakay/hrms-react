@@ -1,7 +1,11 @@
 import React from 'react'
 import {Button, Icon, Segment, Header} from 'semantic-ui-react'
+import { routes } from '../Pages/Routes';
 
 export default function MainHeader() {
+
+    const {createJobAdvertisement} = routes;
+
     return (
         <div>
             <Segment placeholder>
@@ -11,7 +15,7 @@ export default function MainHeader() {
             Kolayca ücretsiz ilan ver, hızla gelecek
             başvurulardan yeni elemanını seç! 
             </Header>
-            <Button primary>İş İlanı Oluştur</Button>
+            <Button primary href={createJobAdvertisement.path}>{createJobAdvertisement.title}</Button>
 
         </Segment>
         </div>

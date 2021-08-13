@@ -34,6 +34,18 @@ export const routes = {
     mainPage: {
         path:"/",
         title:"Ana sayfa"
+    },
+    createJobAdvertisement:{
+        path:"/is-ilani-olustur",
+        title:"İş İlanı Oluştur"
+    },
+    createCV: {
+        path:"/ozgecmis-olustur",
+        title:"Özgeçmiş Oluştur"
+    },
+    createJobExperience: {
+        path:"/is-deneyimi-olustur",
+        title:"İş Deneyimi Oluştur"
     }
 
 }

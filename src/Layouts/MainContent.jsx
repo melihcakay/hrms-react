@@ -12,6 +12,9 @@ import CandidateLogIn from '../Pages/CandidateLogIn';
 import EmployerLogIn from '../Pages/EmployerLogIn';
 import EmployeeLogIn from '../Pages/EmployeeLogin';
 import MainPage from '../Pages/MainPage';
+import CreateJobAdvertisement from '../Pages/CreateJobAdvertisement';
+import CreateCV from '../Pages/CreateCV';
+import CreateJobExperience from '../Pages/CreateJobExperience';
 
 const history = createBrowserHistory();
 
@@ -39,7 +42,10 @@ class MainContent extends React.Component {
             candidateLogin,
             employerLogin,
             employeeLogin,
-            mainPage
+            mainPage,
+            createJobAdvertisement,
+            createCV,
+            createJobExperience
         } = routes;
 
         return (
@@ -73,6 +79,15 @@ class MainContent extends React.Component {
                         </Route>
                         <Route exact path={mainPage.path}>
                             <MainPage handlePageChange={this.handlePageChange}/>
+                        </Route>
+                        <Route exact path={createJobAdvertisement.path}>
+                            <CreateJobAdvertisement handlePageChange={this.handlePageChange}/>
+                        </Route>
+                        <Route exact path={createCV.path}>
+                            <CreateCV handlePageChange={this.handlePageChange}/>
+                        </Route>
+                        <Route exact path={createJobExperience.path}>
+                            <CreateJobExperience handlePageChange={this.handlePageChange}/>
                         </Route>
                 
                 

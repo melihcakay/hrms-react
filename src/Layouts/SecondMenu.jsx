@@ -5,7 +5,7 @@ import './SecondMenu.css';
 
 export default function SecondMenu() {
 
-    const {jobAdvertisement} = routes;
+    const {jobAdvertisement, createJobExperience} = routes;
 
     return (
         <div>
@@ -13,6 +13,9 @@ export default function SecondMenu() {
                 <Container>
                     <Menu.Item>
                         <Button href={jobAdvertisement.path}>{jobAdvertisement.title}</Button>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <Button href={createJobExperience.path}>{createJobExperience.title}</Button>
                     </Menu.Item>
                 </Container>
             </Menu>
