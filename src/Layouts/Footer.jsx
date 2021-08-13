@@ -5,14 +5,14 @@ import './Footer.css';
 
 export default function Footer() {
     return (
-        <div>
+        <div className="footer">
             
             <Segment inverted>
             <Container>
             <Grid columns={3}>
             <Grid.Row>
             <Grid.Column width="4">
-            <Image src= "https://gosplan.app/favicon.png" id="icon"/>
+            <Image src= "https://icon-library.com/images/human-resources-icon-png/human-resources-icon-png-3.jpg" id="icon"/>
             </Grid.Column>
             <Grid.Column width="4">
             <Header inverted size="large">Hakkımızda</Header>

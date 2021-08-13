@@ -1,6 +1,7 @@
 import React from 'react'
 import { Menu, Button, Icon, Image, Container} from 'semantic-ui-react'
 import './Navbar.css';
+import { routes } from "../Pages/Routes";
 
 
 export default function Navbar() {
@@ -8,7 +9,7 @@ export default function Navbar() {
 
 
     
-
+    const {registerSelector, loginSelector} = routes;
 
     return (
         <div>
@@ -17,7 +18,7 @@ export default function Navbar() {
         <Container>
         <Menu.Item>
         
-        <Image src= "https://gosplan.app/favicon.png" id="img"/>
+        <Image href="/" src= "https://icon-library.com/images/human-resources-icon-png/human-resources-icon-png-3.jpg" id="img"/>
 
         </Menu.Item>
             <Menu.Item position="right" >
@@ -59,9 +60,9 @@ export default function Navbar() {
         </Menu.Item >
                 <Menu.Item>
                     <Button.Group>
-                        <Button primary>Kayıt Ol</Button>
+                        <Button primary href={registerSelector.path}>{registerSelector.title}</Button>
                         <Button.Or />
-                        <Button secondary>Giriş Yap</Button>
+                        <Button secondary href={loginSelector.path}>{loginSelector.title}</Button>
                     </Button.Group>
         </Menu.Item>
         </Container>
