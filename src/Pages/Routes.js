@@ -47,5 +47,4 @@ export const routes = {
         path:"/is-deneyimi-olustur",
         title:"İş Deneyimi Oluştur"
     }
-
 }

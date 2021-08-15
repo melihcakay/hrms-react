@@ -51,8 +51,8 @@ export default function JobAdvertisement() {
   </Grid.Column>
 
   <Grid.Column>
-    <Header icon size="medium">
-      <Icon name='add circle' />
+    <Header href="/" icon size="medium">    
+      <Icon name='add circle'/>
     </Header>
   </Grid.Column>
 

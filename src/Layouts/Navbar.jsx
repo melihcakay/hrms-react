@@ -12,10 +12,10 @@ export default function Navbar() {
             <Menu>
                 <Container>
                     <Menu.Item>
-                        <Button href={jobAdvertisement.path}>{jobAdvertisement.title}</Button>
+                        <Button secondary href={jobAdvertisement.path}>{jobAdvertisement.title}</Button>
                     </Menu.Item>
                     <Menu.Item>
-                        <Button href={createJobExperience.path}>{createJobExperience.title}</Button>
+                        <Button secondary  href={createJobExperience.path}>{createJobExperience.title}</Button>
                     </Menu.Item>
                 </Container>
             </Menu>

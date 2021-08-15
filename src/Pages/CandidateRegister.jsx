@@ -2,9 +2,16 @@ import React from 'react'
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "./Form.css"
-
+import { toast } from 'react-toastify';
+import AuthService from '../Services/AuthService';
+import { useHistory } from 'react-router-dom';
 
 export default function CandidateRegister() {
+
+    
+    let authService = new AuthService()
+    const history = useHistory()
+
     return (
         <div className="form">
             <Formik
@@ -31,8 +38,15 @@ export default function CandidateRegister() {
                 })
             }
 
+            
+
             onSubmit={(values, {resetForm, setSubmitting}) => {
-                console.log(values)
+                authService.registerCandidate(values.passwordAgain, values).then((result) => {
+                    toast.success(result.data.message)
+                    history.push("/")
+                }).catch((result) => {
+                    toast(result.response.data.message)
+                })
                 setTimeout(() => {
                     resetForm()
                     setSubmitting(false)
