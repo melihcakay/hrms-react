@@ -1,19 +1,176 @@
 import React from 'react'
-import { Input, Header, Button } from 'semantic-ui-react'
+import { Formik } from "formik";
+import * as Yup from "yup";
+import "./Form.css"
 
 export default function EmployerRegister() {
     return (
-        <div>
-        <Header textAlign="center">
-        <p><span>Şirket İsmi: </span><Input type="text"/></p>
-        <p><span>Website Adresi: </span><Input type="website"/></p>
-        <p><span>Telefon Numarası: </span><Input type="number"/></p>
-        <p><span>Email: </span><Input type="email"/></p>
-        <p><span>Email Tekrar: </span><Input type="email"/></p>
-        <p><span>Şifre: </span><Input type="password"/></p>
-        <p><span>Şifre Tekrar: </span><Input type="password"/></p>
-        <Button size="big" positive >Kayıt Ol</Button>
-        </Header>
+        <div className="form">
+            <Formik
+            initialValues={{
+                companyName: "",
+                websiteAddress: "",
+                phoneNumber: "",
+                email: "",
+                emailAgain: "",
+                password: "",
+                passwordAgain: ""
+            }}
+            validationSchema={
+                Yup.object({
+                    companyName: Yup.string().required("Şirket İsmi Boş Bırakılamaz.."),
+                    websiteAddress: Yup.string().required("Website Adresi Boş Bırakılamaz."),
+                    phoneNumber: Yup.string().required("Telefon Numarası Boş Bırakılamaz."),
+                    email: Yup.string().email().required("Email Boş Bırakılamaz."),
+                    emailAgain: Yup.string().email().required("Emailinizi Tekrar Giriniz."),
+                    password: Yup.string().required("Şifre Boş Bırakılamaz."),
+                    passwordAgain: Yup.string().required("Şifrenizi Tekrar Giriniz.")
+                })
+            }
+
+            onSubmit={(values, {resetForm, setSubmitting}) => {
+                console.log(values)
+                setTimeout(() => {
+                    resetForm()
+                    setSubmitting(false)
+                }, 2000)
+            }
+        }
+
+             >
+            {
+                ({values, errors, handleSubmit, handleReset, handleChange, dirty, isSubmitting, touched}) => (
+                    <form onSubmit={handleSubmit}>
+                        <h3>Kayıt Ol</h3>
+                        <label htmlFor="companyName">Şirket İsmi</label>
+                        <input id="companyName"
+                        type="text" 
+                        className="input" 
+                        value={values.companyName} 
+                        onChange={handleChange}
+                        />
+
+                        {
+                            errors.companyName && touched.companyName && (
+                                <div className="input-feedback">
+                                    {errors.companyName}
+                                </div>
+                            )
+                        }
+
+                        <label htmlFor="websiteAddress">Website Adresi</label>
+                        <input id="websiteAddress"
+                        type="text" 
+                        className="input" 
+                        value={values.websiteAddress} 
+                        onChange={handleChange}
+                        />
+
+                        {
+                            errors.websiteAddress && touched.websiteAddress && (
+                                <div className="input-feedback">
+                                    {errors.websiteAddress}
+                                </div>
+                            )
+                        }
+
+
+
+                        <label htmlFor="phoneNumber">Telefon Numarası</label>
+                        <input id="phoneNumber"
+                        type="text" 
+                        className="input" 
+                        value={values.phoneNumber} 
+                        onChange={handleChange}
+                        />
+
+                        {
+                            errors.phoneNumber && touched.phoneNumber && (
+                                <div className="input-feedback">
+                                    {errors.phoneNumber}
+                                </div>
+                            )
+                        }
+
+                        <label htmlFor="email">Email</label>
+                        <input id="email"
+                        type="email" 
+                        className="input" 
+                        value={values.email} 
+                        onChange={handleChange}
+                        />
+
+                        {
+                            errors.email && touched.email && (
+                                <div className="input-feedback">
+                                    {errors.email}
+                                </div>
+                            )
+                        }
+
+                        <label htmlFor="emailAgain">Email Tekrarı</label>
+                        <input id="emailAgain"
+                        type="email" 
+                        className="input" 
+                        value={values.emailAgain} 
+                        onChange={handleChange}
+                        />
+
+                        {
+                            errors.emailAgain && touched.emailAgain && (
+                                <div className="input-feedback">
+                                    {errors.emailAgain}
+                                </div>
+                            )
+                        }
+
+
+
+                        <label htmlFor="password">Şifre</label>
+                        <input id="password"
+                        type="password" 
+                        className="input" 
+                        value={values.password} 
+                        onChange={handleChange}
+                        />
+
+                        {
+                            errors.password && touched.password && (
+                                <div className="input-feedback">
+                                    {errors.password}
+                                </div>
+                            )
+                        }
+
+                        <label htmlFor="passwordAgain">Şifre Tekrarı</label>
+                        <input id="passwordAgain"
+                        type="password" 
+                        className="input" 
+                        value={values.passwordAgain} 
+                        onChange={handleChange}
+                        />
+
+                        {
+                            errors.passwordAgain && touched.passwordAgain && (
+                                <div className="input-feedback">
+                                    {errors.passwordAgain}
+                                </div>
+                            )
+                        }
+
+
+
+                        <button type="submit" disabled={!dirty || isSubmitting}>Kayıt Ol</button>
+
+
+                    </form>
+                )
+            }
+            
+
+             </Formik>
+
+
         </div>
     )
 }

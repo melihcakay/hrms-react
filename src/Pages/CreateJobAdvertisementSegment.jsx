@@ -1,8 +1,8 @@
 import React from 'react'
 import {Button, Icon, Segment, Header} from 'semantic-ui-react'
-import { routes } from '../Pages/Routes';
+import { routes } from './Routes';
 
-export default function MainHeader() {
+export default function CreateJobAdvertisementSegment() {
 
     const {createJobAdvertisement} = routes;
 

@@ -3,7 +3,7 @@ import { routes } from "../Pages/Routes";
 import {createBrowserHistory} from 'history'
 import {Router, Route, Switch} from "react-router-dom"
 import 'semantic-ui-css/semantic.min.css'
-import JobAdvertisementList from './JobAdvertisementList';
+import JobAdvertisementList from '../Pages/JobAdvertisementList';
 import RegisterSelector from '../Pages/RegisterSelector';
 import LoginSelector from '../Pages/LogInSelector';
 import CandidateRegister from '../Pages/CandidateRegister';

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Grid, Header, Icon} from 'semantic-ui-react'
-import SideBar from './SideBar'
-import JobAdvertisement from '../Pages/JobAdvertisement'
+import SideBar from '../Layouts/SideBar'
+import JobAdvertisement from './JobAdvertisement'
 
 export default function JobAdvertisementList() {
     return (

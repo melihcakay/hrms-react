@@ -1,8 +1,8 @@
 import React from 'react'
 import {Segment, Header, Icon, Button} from 'semantic-ui-react'
-import { routes } from '../Pages/Routes';
+import { routes } from './Routes';
 
-export default function Banner() {
+export default function CreateCVSegment() {
 
     const {createCV} = routes;
 
